@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>課題作成 | 課題管理アプリケーション</title>
+</head>
+<body>
+<h1>課題作成</h1>
+<form action="#" th:action="@{/issues}" th:method="post" th:object="${issueForm}">
+    <div>
+        <label for="summaryInput">概要</label>
+        <input type="text" id="summaryInput" th:field="*{summary}">
+        <p th:if="${#fields.hasErrors('summary')}" th:errors="*{summary}">(error)</p>
+    </div>
+    <div>
+        <label for="descriptionInput">説明</label>
+        <textarea id="descriptionInput" rows="10" th:field="*{description}"></textarea>
+        <p th:if="${#fields.hasErrors('description')}" th:errors="*{description}">(error)</p>
+    </div>
+    <div>
+        <button type="submit">作成</button>
+    </div>
+</form>
+</body>
+</html>

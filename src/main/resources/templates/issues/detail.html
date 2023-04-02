@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>課題詳細 | 課題管理アプリケーション</title>
+</head>
+<body>
+<h1>課題詳細</h1>
+<a href="list.html" th:href="@{/issues}">一覧に戻る</a>
+<di>
+    <h2 th:text="${issue.summary}">(summary)</h2>
+    <p th:text="${issue.description}">(description)</p>
+</di>
+</body>
+</html>
